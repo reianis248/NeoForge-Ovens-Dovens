@@ -1,7 +1,7 @@
-package com.example.examplemod.block;
+package net.boundeddev.ovens_dovens.common.block;
 
-import com.example.examplemod.ExampleMod;
-import com.example.examplemod.item.ExampleItems;
+import net.boundeddev.ovens_dovens.OvensDovens;
+import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 public class ExampleBlocks {
-    public static final DeferredRegister.Blocks BLOCK = DeferredRegister.createBlocks(ExampleMod.MOD_ID);
+    public static final DeferredRegister.Blocks BLOCK = DeferredRegister.createBlocks(OvensDovens.MOD_ID);
 
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = registerBlock(
             "example_block",
@@ -27,7 +27,7 @@ public class ExampleBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        ExampleItems.ITEM.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        CutFruits.CUTFRUIT.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

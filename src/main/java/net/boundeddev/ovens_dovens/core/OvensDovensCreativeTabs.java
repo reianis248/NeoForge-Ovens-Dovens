@@ -1,7 +1,8 @@
-package com.example.examplemod;
+package net.boundeddev.ovens_dovens.core;
 
-import com.example.examplemod.block.ExampleBlocks;
-import com.example.examplemod.item.ExampleItems;
+import net.boundeddev.ovens_dovens.OvensDovens;
+import net.boundeddev.ovens_dovens.common.block.ExampleBlocks;
+import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,16 +12,16 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ExampleCreativeTabs {
+public class OvensDovensCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ExampleMod.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, OvensDovens.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> EXAMPLE_MOD = CREATIVE_MODE_TABS.register("examplemod",
+    public static final Supplier<CreativeModeTab> OVENS_DOVENS = CREATIVE_MODE_TABS.register("examplemod",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.examplemod"))
-                    .icon(() -> new ItemStack(ExampleItems.EXAMPLE_ITEM.get()))
+                    .title(Component.translatable("itemGroup.ovens_dovens"))
+                    .icon(() -> new ItemStack(CutFruits.CUT_APPLE.get()))
                     .displayItems(((parameters, output) -> {
-                        output.accept(ExampleItems.EXAMPLE_ITEM.get());
+                        output.accept(CutFruits.CUT_APPLE.get());
                         output.accept(ExampleBlocks.EXAMPLE_BLOCK.get());
                     })).build());
 

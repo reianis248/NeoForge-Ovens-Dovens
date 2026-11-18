@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:apple",
+    {
+      "id": "camped:orange",
+      "required": false
+    }
+  ]
+}

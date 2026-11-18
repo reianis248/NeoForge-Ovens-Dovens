@@ -1,12 +1,14 @@
-package com.example.examplemod;
+package net.boundeddev.ovens_dovens;
 
-import com.example.examplemod.block.ExampleBlocks;
-import com.example.examplemod.item.ExampleItems;
+import net.boundeddev.ovens_dovens.common.block.ExampleBlocks;
+import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
+import net.boundeddev.ovens_dovens.common.item.registries.DovenDishes;
+import net.boundeddev.ovens_dovens.config.Config;
+import net.boundeddev.ovens_dovens.core.OvensDovensCreativeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -14,20 +16,19 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(ExampleMod.MOD_ID)
-public class ExampleMod {
+@Mod(OvensDovens.MOD_ID)
+public class OvensDovens {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "examplemod";
+    public static final String MOD_ID = "ovens_dovens";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer) {
+    public OvensDovens(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -37,13 +38,16 @@ public class ExampleMod {
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
+        /**
         modEventBus.addListener(this::addCreative);
+        **/
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
 
-        ExampleCreativeTabs.register(modEventBus);
-        ExampleItems.register(modEventBus);
+        OvensDovensCreativeTabs.register(modEventBus);
+        CutFruits.register(modEventBus);
+        DovenDishes.register(modEventBus);
         ExampleBlocks.register(modEventBus);
     }
 
@@ -52,12 +56,14 @@ public class ExampleMod {
     }
 
     // Add the example block item to the building blocks tab
+/**
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ExampleItems.EXAMPLE_ITEM);
+            event.accept(CutFruits.EXAMPLE_ITEM);
             event.accept(ExampleBlocks.EXAMPLE_BLOCK);
         }
     }
+**/
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
