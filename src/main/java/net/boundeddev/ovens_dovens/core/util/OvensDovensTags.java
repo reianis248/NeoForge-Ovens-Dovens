@@ -14,6 +14,11 @@ public class OvensDovensTags {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(OvensDovens.MOD_ID, name));
         }
 
+        public static final TagKey<Block> BASE_STONE = createTag("base_stone");
+        public static final TagKey<Block> BASE_COPPER = createTag("base_copper");
+        public static final TagKey<Block> BASE_IRON = createTag("base_iron");
+
+        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
     }
     public static class Items {
         private static TagKey<Item> createTag(String name) {
@@ -21,6 +26,11 @@ public class OvensDovensTags {
         }
 
         public static final TagKey<Item> KNIVES = createTag("knives");
+        public static final TagKey<Item> CLEAVERS = createTag("cleavers");
         public static final TagKey<Item> KNIVEABLE = createTag("kniveable");
+        public static final TagKey<Item> BASE_STONE = createTag("base_stone");
+        public static final TagKey<Item> BASE_COPPER = createTag("base_copper");
+        public static final TagKey<Item> BASE_IRON = createTag("base_iron");
+
     }
 }

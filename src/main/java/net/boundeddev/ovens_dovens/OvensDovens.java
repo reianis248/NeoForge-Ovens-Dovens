@@ -3,6 +3,7 @@ package net.boundeddev.ovens_dovens;
 import net.boundeddev.ovens_dovens.common.block.ExampleBlocks;
 import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
 import net.boundeddev.ovens_dovens.common.item.registries.DovenDishes;
+import net.boundeddev.ovens_dovens.common.item.registries.DovenCookingTools;
 import net.boundeddev.ovens_dovens.config.Config;
 import net.boundeddev.ovens_dovens.core.OvensDovensCreativeTabs;
 import org.slf4j.Logger;
@@ -48,6 +49,7 @@ public class OvensDovens {
         OvensDovensCreativeTabs.register(modEventBus);
         CutFruits.register(modEventBus);
         DovenDishes.register(modEventBus);
+        DovenCookingTools.register(modEventBus);
         ExampleBlocks.register(modEventBus);
     }
 

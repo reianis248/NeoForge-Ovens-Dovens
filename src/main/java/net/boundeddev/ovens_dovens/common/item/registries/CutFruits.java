@@ -7,7 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static net.boundeddev.ovens_dovens.common.item.properties.ItemProperties.cutFood;
+import static net.boundeddev.ovens_dovens.common.item.properties.DovenProperties.cutFood;
 
 public class CutFruits {
     public static final DeferredRegister.Items CUTFRUIT = DeferredRegister.createItems(OvensDovens.MOD_ID);

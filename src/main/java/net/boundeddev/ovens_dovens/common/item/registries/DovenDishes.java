@@ -7,7 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static net.boundeddev.ovens_dovens.common.item.properties.ItemProperties.dishItem;
+import static net.boundeddev.ovens_dovens.common.item.properties.DovenProperties.dishItem;
 
 public class DovenDishes {
     public static final DeferredRegister.Items DOVENDISHES = DeferredRegister.createItems(OvensDovens.MOD_ID);
