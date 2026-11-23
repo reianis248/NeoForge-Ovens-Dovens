@@ -26,5 +26,7 @@ public class OvensDovensItemModelProvider extends ItemModelProvider {
 
 //        handheldItem(DovenCookingTools.IRON_KNIFE.get());
 //        handheldItem(DovenCookingTools.IRON_CLEAVER.get());
+        
+        basicItem(MiscItems.COPPER_NUGGET.get());
     }
 }
