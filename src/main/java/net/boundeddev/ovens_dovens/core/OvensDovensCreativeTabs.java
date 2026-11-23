@@ -1,7 +1,7 @@
 package net.boundeddev.ovens_dovens.core;
 
 import net.boundeddev.ovens_dovens.OvensDovens;
-import net.boundeddev.ovens_dovens.common.block.ExampleBlocks;
+import net.boundeddev.ovens_dovens.common.block.FruitBlocks;
 import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -22,7 +22,7 @@ public class OvensDovensCreativeTabs {
                     .icon(() -> new ItemStack(CutFruits.CUT_APPLE.get()))
                     .displayItems(((parameters, output) -> {
                         output.accept(CutFruits.CUT_APPLE.get());
-                        output.accept(ExampleBlocks.EXAMPLE_BLOCK.get());
+                        output.accept(FruitBlocks.EXAMPLE_BLOCK.get());
                     })).build());
 
     public static void register(IEventBus eventBus) {

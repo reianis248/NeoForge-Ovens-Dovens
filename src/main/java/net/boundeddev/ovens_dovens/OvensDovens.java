@@ -1,6 +1,6 @@
 package net.boundeddev.ovens_dovens;
 
-import net.boundeddev.ovens_dovens.common.block.ExampleBlocks;
+import net.boundeddev.ovens_dovens.common.block.FruitBlocks;
 import net.boundeddev.ovens_dovens.common.item.registries.CutFruits;
 import net.boundeddev.ovens_dovens.common.item.registries.DovenDishes;
 import net.boundeddev.ovens_dovens.common.item.registries.DovenCookingTools;
@@ -50,7 +50,7 @@ public class OvensDovens {
         CutFruits.register(modEventBus);
         DovenDishes.register(modEventBus);
         DovenCookingTools.register(modEventBus);
-        ExampleBlocks.register(modEventBus);
+        FruitBlocks.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

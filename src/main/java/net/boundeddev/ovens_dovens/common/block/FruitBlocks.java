@@ -12,16 +12,16 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ExampleBlocks {
-    public static final DeferredRegister.Blocks BLOCK = DeferredRegister.createBlocks(OvensDovens.MOD_ID);
+public class FruitBlocks {
+    public static final DeferredRegister.Blocks FRUITBLOCK = DeferredRegister.createBlocks(OvensDovens.MOD_ID);
 
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = registerBlock(
-            "example_block",
+    public static final DeferredBlock<Block> APPLE_BLOCK = registerBlock(
+            "apple_block",
             () -> new Block(BlockBehaviour.Properties.of()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
-        DeferredBlock<T> toReturn = BLOCK.register(name, block);
+        DeferredBlock<T> toReturn = FRUITBLOCK.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
@@ -31,6 +31,6 @@ public class ExampleBlocks {
     }
 
     public static void register(IEventBus eventBus) {
-        BLOCK.register(eventBus);
+        FRUITBLOCK.register(eventBus);
     }
 }
