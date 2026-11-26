@@ -18,6 +18,12 @@ public class FruitBlocks {
     public static final DeferredBlock<Block> APPLE_BLOCK = registerBlock(
             "apple_block",
             () -> new Block(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<Block> ORANGE_BLOCK = registerBlock(
+            "orange_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<Block> PLUM_BLOCK = registerBlock(
+            "plum_block",
+            () -> new Block(BlockBehaviour.Properties.of()));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

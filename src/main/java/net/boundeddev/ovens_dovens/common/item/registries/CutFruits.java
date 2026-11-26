@@ -15,6 +15,12 @@ public class CutFruits {
     public static final DeferredItem<Item> CUT_APPLE = CUTFRUIT.register(
             "cut_apple",
             () -> new Item(cutFood(ModFoodProperties.CUT_APPLE)));
+    public static final DeferredItem<Item> CUT_ORANGE = CUTFRUIT.register(
+            "cut_orange",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CUT_PLUM = CUTFRUIT.register(
+            "cut_plum",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         CUTFRUIT.register(eventBus);

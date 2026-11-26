@@ -1,6 +1,8 @@
 package net.boundeddev.ovens_dovens.client;
 
 import net.boundeddev.ovens_dovens.OvensDovens;
+import net.boundeddev.ovens_dovens.common.screen.DovensMenuTypes;
+import net.boundeddev.ovens_dovens.common.screen.OvenScreen;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -8,6 +10,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -28,5 +31,10 @@ public class OvensDovensClient {
         // Some client setup code
         OvensDovens.LOGGER.info("HELLO FROM CLIENT SETUP");
         OvensDovens.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(DovensMenuTypes.OVEN_MENU.get(), OvenScreen::new);
     }
 }
